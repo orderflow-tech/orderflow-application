@@ -1,0 +1,20 @@
+export enum StatusPedido {
+  RECEBIDO = 'RECEBIDO',
+  EM_PREPARACAO = 'EM_PREPARACAO',
+  PRONTO = 'PRONTO',
+  FINALIZADO = 'FINALIZADO'
+}
+
+export enum StatusPagamento {
+  PENDENTE = 'PENDENTE',
+  APROVADO = 'APROVADO',
+  RECUSADO = 'RECUSADO'
+}
+
+export enum TipoPagamento {
+  PIX = 'PIX',
+  CARTAO_CREDITO = 'CARTAO_CREDITO',
+  CARTAO_DEBITO = 'CARTAO_DEBITO',
+  DINHEIRO = 'DINHEIRO'
+}
+

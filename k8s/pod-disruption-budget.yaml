@@ -1,0 +1,26 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: orderflow-backend-pdb
+  namespace: orderflow
+  labels:
+    app: orderflow-backend
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: orderflow-backend
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: postgres-pdb
+  namespace: orderflow
+  labels:
+    app: postgres
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: postgres
+

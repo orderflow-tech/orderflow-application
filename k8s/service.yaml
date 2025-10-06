@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: orderflow-backend-service
+  namespace: orderflow
+  labels:
+    app: orderflow-backend
+    component: api
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  selector:
+    app: orderflow-backend
+  sessionAffinity: None
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orderflow-backend-internal
+  namespace: orderflow
+  labels:
+    app: orderflow-backend
+    component: api
+    service-type: internal
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3000
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  selector:
+    app: orderflow-backend
+

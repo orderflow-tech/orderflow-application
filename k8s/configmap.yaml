@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orderflow-config
+  namespace: orderflow
+  labels:
+    app: orderflow-backend
+data:
+  NODE_ENV: "production"
+  PORT: "3000"
+  DB_HOST: "postgres-service"
+  DB_PORT: "5432"
+  DB_NAME: "orderflow"
+  DB_USER: "orderflow_user"
+  CORS_ORIGIN: "*"
+  LOG_LEVEL: "info"
+  API_VERSION: "v1"
+  PAYMENT_GATEWAY_TYPE: "mock"
+
